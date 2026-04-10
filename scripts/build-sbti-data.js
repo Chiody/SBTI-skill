@@ -5,7 +5,7 @@ const path = require('path');
 const root = path.join(__dirname, '..');
 const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 const startTag = 'const dimensionMeta';
-const endTag = "const DRUNK_TRIGGER_QUESTION_ID = 'drink_gate_q2';";
+const endTag = "const DRUNK_TRIGGER_QUESTION_ID = 'special_gate_q2';";
 const i0 = html.indexOf(startTag);
 const i1 = html.indexOf(endTag);
 if (i0 < 0 || i1 < 0) {

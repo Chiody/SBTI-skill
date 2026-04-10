@@ -33,8 +33,8 @@ function buildShuffledQuestions() {
 
 function getVisibleQuestions(shuffled, answers) {
   const visible = [...shuffled];
-  const gateIndex = visible.findIndex(q => q.id === 'drink_gate_q1');
-  if (gateIndex !== -1 && answers.drink_gate_q1 === 3) {
+  const gateIndex = visible.findIndex(q => q.id === 'special_gate_q1');
+  if (gateIndex !== -1 && answers.special_gate_q1 === 3) {
     visible.splice(gateIndex + 1, 0, specialQuestions[1]);
   }
   return visible;
@@ -95,24 +95,24 @@ function computeResult(answers, shuffledQuestions) {
   const drunkTriggered = getDrunkTriggered(answers);
 
   let finalType;
-  let modeKicker = '你的主类型';
-  let badge = `匹配度 ${bestNormal.similarity}% · 精准命中 ${bestNormal.exact}/15 维`;
-  let sub = '维度命中度较高，当前结果可视为你的第一人格画像。';
+  let modeKicker = 'Your primary type';
+  let badge = `Match ${bestNormal.similarity}% · ${bestNormal.exact}/15 dimensions`;
+  let sub = 'High dimensional match. This is your primary personality profile.';
   let special = false;
   let secondaryType = null;
 
   if (drunkTriggered) {
-    finalType = TYPE_LIBRARY.DRUNK;
+    finalType = TYPE_LIBRARY.HIDDEN;
     secondaryType = bestNormal;
-    modeKicker = '隐藏人格已激活';
-    badge = '匹配度 100% · 酒精异常因子已接管';
-    sub = '乙醇亲和性过强，系统已直接跳过常规人格审判。';
+    modeKicker = 'Hidden personality activated';
+    badge = 'Match 100% · Special trigger factor detected';
+    sub = 'Special branch triggered; standard matching bypassed.';
     special = true;
   } else if (bestNormal.similarity < 60) {
-    finalType = TYPE_LIBRARY.HHHH;
-    modeKicker = '系统强制兜底';
-    badge = `标准人格库最高匹配仅 ${bestNormal.similarity}%`;
-    sub = '标准人格库对你的脑回路集体罢工了，于是系统把你强制分配给了 HHHH。';
+    finalType = TYPE_LIBRARY.FALLBACK;
+    modeKicker = 'Fallback assignment';
+    badge = `Best match only ${bestNormal.similarity}%`;
+    sub = 'No standard type matched above threshold; fallback type assigned.';
     special = true;
   } else {
     finalType = bestNormal;
@@ -158,7 +158,7 @@ function mapVisibleForView(shuffled, answers) {
     id: q.id,
     text: q.text,
     indexLabel: idx + 1,
-    metaLabel: q.special ? '补充题' : '维度已隐藏',
+    metaLabel: q.special ? 'Special' : 'Dimension hidden',
     answer: answers[q.id],
     options: q.options.map((opt, oi) => ({
       value: String(opt.value),

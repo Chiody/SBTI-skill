@@ -1,8 +1,8 @@
 <view class="shell">
   <view class="hero card">
     <view class="hero-inner">
-      <text class="title">MBTI已经过时，SBTI来了。</text>
-      <button class="btn-primary btn-wide" bindtap="onStart">开始测试</button>
+      <text class="title">Personality Test Engine Demo</text>
+      <button class="btn-primary btn-wide" bindtap="onStart">Start Test</button>
     </view>
   </view>
 </view>

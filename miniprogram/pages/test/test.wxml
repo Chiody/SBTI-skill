@@ -13,7 +13,7 @@
       <block wx:for="{{visibleList}}" wx:key="id">
         <view class="question">
           <view class="question-meta">
-            <text class="badge">第 {{item.indexLabel}} 题</text>
+            <text class="badge">Q{{item.indexLabel}}</text>
             <text class="dim-tag">{{item.metaLabel}}</text>
           </view>
           <text class="question-title">{{item.text}}</text>
@@ -33,8 +33,8 @@
     <view class="bottom-actions">
       <text class="hint">{{hintText}}</text>
       <view class="btn-row">
-        <button class="btn-secondary" bindtap="onBackHome">返回首页</button>
-        <button class="btn-primary" disabled="{{submitDisabled}}" bindtap="onSubmit">提交并查看结果</button>
+        <button class="btn-secondary" bindtap="onBackHome">Back</button>
+        <button class="btn-primary" disabled="{{submitDisabled}}" bindtap="onSubmit">Submit</button>
       </view>
     </view>
   </view>

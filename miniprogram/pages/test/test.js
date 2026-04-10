@@ -9,7 +9,7 @@ Page({
     done: 0,
     progressPercent: 0,
     submitDisabled: true,
-    hintText: '全选完才会放行。世界已经够乱了，起码把题做完整。'
+    hintText: 'Answer all questions before submitting.'
   },
 
   onLoad() {
@@ -33,8 +33,8 @@ Page({
       progressPercent: percent,
       submitDisabled: !complete,
       hintText: complete
-        ? '都做完了。现在可以把你的电子魂魄交给结果页审判。'
-        : '全选完才会放行。世界已经够乱了，起码把题做完整。'
+        ? 'All done. Submit to see your result.'
+        : 'Answer all questions before submitting.'
     });
   },
 
@@ -43,8 +43,8 @@ Page({
     const val = Number(e.detail.value);
     const app = getApp();
     app.globalData.answers[qid] = val;
-    if (qid === 'drink_gate_q1' && val !== 3) {
-      delete app.globalData.answers.drink_gate_q2;
+    if (qid === 'special_gate_q1' && val !== 3) {
+      delete app.globalData.answers.special_gate_q2;
     }
     this.refresh();
   },

@@ -19,7 +19,7 @@
       </view>
 
       <view wx:if="{{showSecondary}}" class="secondary-block">
-        <text class="sec-title">标准人格库侧写（未触发隐藏人格时）</text>
+        <text class="sec-title">Standard Profile (without hidden trigger)</text>
         <text class="sec-line">{{secondaryLine}}</text>
         <view class="sec-row">
           <image wx:if="{{secondaryPosterSrc}}" class="sec-poster" src="{{secondaryPosterSrc}}" mode="aspectFit" />
@@ -28,17 +28,17 @@
       </view>
 
       <view class="block">
-        <text class="block-title">该人格的简单解读</text>
+        <text class="block-title">Type Description</text>
         <text class="block-body">{{desc}}</text>
       </view>
 
       <view class="block">
-        <text class="block-title">十五维度评分</text>
+        <text class="block-title">15-Dimension Scores</text>
         <block wx:for="{{dimRows}}" wx:key="name">
           <view class="dim-item">
             <view class="dim-top">
               <text class="dim-name">{{item.name}}</text>
-              <text class="dim-score">{{item.level}} / {{item.score}}分</text>
+              <text class="dim-score">{{item.level}} / {{item.score}}pts</text>
             </view>
             <text class="dim-exp">{{item.explanation}}</text>
           </view>
@@ -46,13 +46,13 @@
       </view>
 
       <view class="block note-block">
-        <text class="block-title">友情提示</text>
+        <text class="block-title">Disclaimer</text>
         <text class="note-body">{{funNote}}</text>
       </view>
 
       <view class="result-actions">
-        <button class="btn-secondary" bindtap="onRestart">重新测试</button>
-        <button class="btn-primary" bindtap="onHome">回到首页</button>
+        <button class="btn-secondary" bindtap="onRestart">Restart</button>
+        <button class="btn-primary" bindtap="onHome">Home</button>
       </view>
     </view>
   </view>

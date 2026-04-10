@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="560" viewBox="0 0 400 560">
+  <rect width="400" height="560" rx="16" fill="#edf6ef" stroke="#dbe8dd" stroke-width="2"/>
+  <text x="200" y="260" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#6a786f">Your Poster Here</text>
+  <text x="200" y="300" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#9aaa9e">Replace with your own image</text>
+</svg>
