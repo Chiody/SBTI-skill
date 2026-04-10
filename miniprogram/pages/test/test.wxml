@@ -1,0 +1,41 @@
+<view class="shell">
+  <view class="card test-card">
+    <view class="topbar">
+      <view class="progress-wrap">
+        <view class="progress">
+          <view class="progress-inner" style="width: {{progressPercent}}%;"></view>
+        </view>
+      </view>
+      <text class="progress-text">{{done}} / {{total}}</text>
+    </view>
+
+    <scroll-view scroll-y class="q-scroll" enhanced show-scrollbar="{{false}}">
+      <block wx:for="{{visibleList}}" wx:key="id">
+        <view class="question">
+          <view class="question-meta">
+            <text class="badge">第 {{item.indexLabel}} 题</text>
+            <text class="dim-tag">{{item.metaLabel}}</text>
+          </view>
+          <text class="question-title">{{item.text}}</text>
+          <radio-group class="options" data-qid="{{item.id}}" bindchange="onAnswerChange">
+            <label wx:for="{{item.options}}" wx:for-item="opt" wx:key="value" class="option">
+              <radio value="{{opt.value}}" checked="{{item.answer === opt.numValue}}" color="#4d6a53" />
+              <view class="option-body">
+                <text class="option-code">{{opt.code}}</text>
+                <text class="option-label">{{opt.label}}</text>
+              </view>
+            </label>
+          </radio-group>
+        </view>
+      </block>
+    </scroll-view>
+
+    <view class="bottom-actions">
+      <text class="hint">{{hintText}}</text>
+      <view class="btn-row">
+        <button class="btn-secondary" bindtap="onBackHome">返回首页</button>
+        <button class="btn-primary" disabled="{{submitDisabled}}" bindtap="onSubmit">提交并查看结果</button>
+      </view>
+    </view>
+  </view>
+</view>

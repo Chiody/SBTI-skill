@@ -1,0 +1,140 @@
+.test-card {
+  padding: 36rpx 28rpx 28rpx;
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 48rpx);
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 24rpx;
+  margin-bottom: 28rpx;
+}
+
+.progress-wrap {
+  flex: 1;
+  min-width: 200rpx;
+}
+
+.progress {
+  height: 16rpx;
+  background: #edf3ee;
+  border-radius: 999rpx;
+  overflow: hidden;
+}
+
+.progress-inner {
+  height: 100%;
+  background: linear-gradient(90deg, #97b59c, #5b7a62);
+  border-radius: inherit;
+}
+
+.progress-text {
+  font-size: 26rpx;
+  color: #6a786f;
+  white-space: nowrap;
+}
+
+.q-scroll {
+  flex: 1;
+  max-height: 68vh;
+  min-height: 400rpx;
+}
+
+.question {
+  border: 1px solid #dbe8dd;
+  border-radius: 36rpx;
+  padding: 32rpx;
+  margin-bottom: 28rpx;
+  background: linear-gradient(180deg, #ffffff, #fbfdfb);
+}
+
+.question-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16rpx;
+}
+
+.badge {
+  font-size: 22rpx;
+  padding: 10rpx 20rpx;
+  border-radius: 999rpx;
+  background: #edf6ef;
+  border: 1px solid #dbe8dd;
+  color: #4d6a53;
+}
+
+.dim-tag {
+  font-size: 22rpx;
+  color: #6a786f;
+}
+
+.question-title {
+  font-size: 30rpx;
+  line-height: 1.65;
+  color: #1e2a22;
+}
+
+.options {
+  margin-top: 24rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+.option {
+  display: flex;
+  align-items: flex-start;
+  gap: 16rpx;
+  padding: 24rpx;
+  border: 1px solid #dbe8dd;
+  border-radius: 28rpx;
+  background: #fff;
+}
+
+.option-body {
+  flex: 1;
+  display: flex;
+  gap: 12rpx;
+  align-items: flex-start;
+}
+
+.option-code {
+  font-weight: 800;
+  color: #4d6a53;
+  min-width: 36rpx;
+  font-size: 28rpx;
+}
+
+.option-label {
+  font-size: 28rpx;
+  line-height: 1.5;
+  color: #1e2a22;
+}
+
+.bottom-actions {
+  margin-top: 20rpx;
+  padding-top: 12rpx;
+}
+
+.hint {
+  font-size: 26rpx;
+  color: #6a786f;
+  line-height: 1.6;
+  margin-bottom: 20rpx;
+  display: block;
+}
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20rpx;
+}
+
+.btn-row .btn-primary,
+.btn-row .btn-secondary {
+  flex: 1;
+  min-width: 240rpx;
+}

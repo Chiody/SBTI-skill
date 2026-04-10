@@ -1,0 +1,29 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/test/test",
+    "pages/result/result"
+  ],
+  "subPackages": [
+    {
+      "root": "packageImages",
+      "name": "packageImages",
+      "pages": ["pages/holder/holder"]
+    }
+  ],
+  "preloadRule": {
+    "pages/test/test": {
+      "network": "all",
+      "packages": ["packageImages"]
+    }
+  },
+  "window": {
+    "navigationBarTitleText": "SBTI 人格测试",
+    "navigationBarBackgroundColor": "#f6faf6",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f6faf6",
+    "backgroundTextStyle": "light"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,4 @@
+{
+  "desc": "默认规则：页面可被索引",
+  "rules": [{ "action": "allow", "page": "*" }]
+}

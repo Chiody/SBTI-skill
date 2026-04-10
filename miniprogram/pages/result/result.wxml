@@ -1,0 +1,59 @@
+<scroll-view scroll-y class="page-scroll" enhanced show-scrollbar="{{false}}">
+  <view class="shell">
+    <view class="card result-card">
+      <view class="result-top">
+        <view class="poster-box" wx:if="{{posterSrc}}">
+          <image class="poster-image" src="{{posterSrc}}" mode="aspectFit" />
+          <text class="poster-caption">{{intro}}</text>
+        </view>
+        <view class="poster-box placeholder" wx:else>
+          <text class="poster-caption">{{intro}}</text>
+        </view>
+
+        <view class="type-box">
+          <text class="type-kicker">{{modeKicker}}</text>
+          <text class="type-name">{{typeName}}</text>
+          <view class="match">{{badge}}</view>
+          <text class="type-sub">{{sub}}</text>
+        </view>
+      </view>
+
+      <view wx:if="{{showSecondary}}" class="secondary-block">
+        <text class="sec-title">标准人格库侧写（未触发隐藏人格时）</text>
+        <text class="sec-line">{{secondaryLine}}</text>
+        <view class="sec-row">
+          <image wx:if="{{secondaryPosterSrc}}" class="sec-poster" src="{{secondaryPosterSrc}}" mode="aspectFit" />
+          <text class="sec-desc">{{secondaryDesc}}</text>
+        </view>
+      </view>
+
+      <view class="block">
+        <text class="block-title">该人格的简单解读</text>
+        <text class="block-body">{{desc}}</text>
+      </view>
+
+      <view class="block">
+        <text class="block-title">十五维度评分</text>
+        <block wx:for="{{dimRows}}" wx:key="name">
+          <view class="dim-item">
+            <view class="dim-top">
+              <text class="dim-name">{{item.name}}</text>
+              <text class="dim-score">{{item.level}} / {{item.score}}分</text>
+            </view>
+            <text class="dim-exp">{{item.explanation}}</text>
+          </view>
+        </block>
+      </view>
+
+      <view class="block note-block">
+        <text class="block-title">友情提示</text>
+        <text class="note-body">{{funNote}}</text>
+      </view>
+
+      <view class="result-actions">
+        <button class="btn-secondary" bindtap="onRestart">重新测试</button>
+        <button class="btn-primary" bindtap="onHome">回到首页</button>
+      </view>
+    </view>
+  </view>
+</scroll-view>

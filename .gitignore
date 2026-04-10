@@ -1,0 +1,6 @@
+.DS_Store
+*.log
+node_modules/
+
+# 微信开发者工具本机覆盖（可能含隐私路径，勿提交）
+project.private.config.json

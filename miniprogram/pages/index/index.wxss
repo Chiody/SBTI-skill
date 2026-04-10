@@ -1,0 +1,26 @@
+.hero {
+  padding: 80rpx 48rpx 100rpx;
+  min-height: 55vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-inner {
+  text-align: center;
+  width: 100%;
+}
+
+.title {
+  display: block;
+  font-size: 56rpx;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.btn-wide {
+  margin-top: 56rpx;
+  width: 100%;
+  max-width: 520rpx;
+}
